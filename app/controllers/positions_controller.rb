@@ -4,7 +4,7 @@ class PositionsController < ApplicationController
   layout "main"
   def index
     @positions = Position.all
-
+    @position = Position.last
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @positions }

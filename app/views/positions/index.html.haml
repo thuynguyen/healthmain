@@ -1,3 +1,20 @@
+%center
+  %b PHÒNG KHÁM CHUYÊN KHOA SẢN - KHHGĐ
+  %div 
+    %b Bs. Nguyễn Cảnh Sơn   
+  %div 
+    Địa điểm:
+    %span 
+      %b 156 Nguyễn Thanh Đằng, phường Phước Hiệp, Tp Bà Rịa, Bà Rịa-Vũng Tàu.
+  %div 
+    Điện thoại:
+    %span 
+      %b @position.phone
+    %span{:style =>"margin-left: 30px;"}
+      Email:
+      %span= mail_to @position.email
+      
+  %div{:style => "margin-top: 30px;"}= image_tag @position.map
 %h1 Listing positions
 
 %table
