@@ -2,6 +2,7 @@ class PositionsController < ApplicationController
   # GET /positions 
   # GET /positions.json
   layout "main"
+  set_tab :message
   def index
     @positions = Position.all
     @position = Position.last

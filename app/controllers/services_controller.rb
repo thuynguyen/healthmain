@@ -1,10 +1,11 @@
 class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
+  set_tab :inbox
   layout "main"
   def index
     @services = Service.all
-
+    @service = Service.last
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @services }

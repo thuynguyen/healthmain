@@ -1,8 +1,13 @@
 Healthcare::Application.routes.draw do
-  resources :services
+  root :to => "home#index"
+  #scope "(:locale)", :locale => /en|vn/ do
+    devise_for :users
+
+    resources :services
 
 
-  resources :positions
+    resources :positions
+  #end
 
 
   # The priority is based upon order of creation:

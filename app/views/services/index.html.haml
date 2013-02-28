@@ -1,19 +1,28 @@
-%h1 Listing services
+%center{:style=>"margin-top: 10px;"}
+  %b.font-title= t("services.title")
+  %div{:style=>"width: 500px;"}
+    - operates = @service.operations.map &:name
+    %ul.operations
+      - operates.each do |name|
+        %li= name 
+    .clearfix
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
+/ %h1 Listing services
 
-  - @services.each do |service|
-    %tr
-      %td= service.name
-      %td= link_to 'Show', service
-      %td= link_to 'Edit', edit_service_path(service)
-      %td= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete
+/ %table
+/   %tr
+/     %th Name
+/     %th
+/     %th
+/     %th
 
-%br
+/   - @services.each do |service|
+/     %tr
+/       %td= service.name
+/       %td= link_to 'Show', service
+/       %td= link_to 'Edit', edit_service_path(service)
+/       %td= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Service', new_service_path
+/ %br
+
+/ = link_to 'New Service', new_service_path

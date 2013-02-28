@@ -10,4 +10,30 @@ module ApplicationHelper
     end
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
+  
+  class MenuTabBuilder < TabsOnRails::Tabs::Builder
+    def open_tabs(options = {})
+      @context.tag("ul", options, open = true)
+    end
+
+    def close_tabs(options = {})
+      "</ul>".html_safe
+    end
+
+    def tab_for(tab, name, options, item_options = {})
+      cl = (current_tab?(tab.to_s.split("_").first.to_sym) ? 'active temp' : item_options[:class])
+      item_options[:class] = (current_tab?(tab) ? 'active text-menu' : cl)
+      if name.blank?
+        @context.link_to(options) do 
+          @context.content_tag(:li, item_options) do
+          end
+        end
+      else
+        @context.content_tag(:li, item_options) do
+          @context.link_to(name, options)
+        end
+      end
+    end
+  end
+  
 end

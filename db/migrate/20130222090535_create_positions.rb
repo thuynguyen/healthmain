@@ -6,6 +6,7 @@ class CreatePositions < ActiveRecord::Migration
       t.string :phone
       t.string :email
       t.attachment :map
+      t.references :user
       t.timestamps
     end
   end

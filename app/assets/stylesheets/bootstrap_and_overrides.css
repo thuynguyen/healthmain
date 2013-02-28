@@ -13,7 +13,10 @@ input[type="email"]{
 select {
 	line-height:24px
 }
-
+a:hover {
+	color: red;
+	background-color: none;
+}
 textarea, input[type="text"], input[type="password"], input[type="datetime"], 
 input[type="datetime-local"], input[type="date"], input[type="month"], 
 input[type="time"], input[type="week"], input[type="number"], 
